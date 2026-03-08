@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/idea-refine/SKILL.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/context-engineering/SKILL.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/browser-testing-with-devtools/SKILL.md\")",
+      "Bash(gh api repos/addyosmani/web-quality-skills --jq '.description')",
+      "Bash(gh api repos/addyosmani/web-quality-skills/contents --jq '.[].name')",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/web-quality-audit/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/web-quality-audit/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/web-quality-audit/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/performance/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/performance/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/core-web-vitals/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/core-web-vitals/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/accessibility/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/accessibility/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/seo/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/seo/SKILL.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/best-practices/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/best-practices/SKILL.md\")"
+    ]
+  }
+}
