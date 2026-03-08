@@ -12,7 +12,15 @@
       "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/core-web-vitals/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/core-web-vitals/SKILL.md\")",
       "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/accessibility/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/accessibility/SKILL.md\")",
       "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/seo/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/seo/SKILL.md\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/best-practices/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/best-practices/SKILL.md\")"
+      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/best-practices/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/best-practices/SKILL.md\")",
+      "Bash(curl -sL \"https://api.github.com/repos/Orchestra-Research/AI-Research-SKILLs/contents/skills\")",
+      "Bash(curl -sL \"https://api.github.com/repos/Orchestra-Research/AI-Research-SKILLs/contents\")",
+      "Bash(curl -sL \"https://api.github.com/repos/Orchestra-Research/AI-Research-SKILLs/contents/14-agents\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/Orchestra-Research/AI-Research-SKILLs/main/14-agents/autogpt/SKILL.md\")",
+      "Bash(curl -sL \"https://api.github.com/repos/Orchestra-Research/AI-Research-SKILLs/contents/15-rag\")",
+      "Bash(curl -sL \"https://api.github.com/repos/anthropics/skills/contents\")",
+      "Bash(curl -sL \"https://api.github.com/repos/anthropics/skills/contents/skills\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/anthropics/skills/main/README.md\")"
     ]
   }
 }
