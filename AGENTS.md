@@ -25,20 +25,12 @@ This is a boilerplate — it contains the full set of skills across all project 
 | [documentation-and-adrs](skills/documentation-and-adrs/SKILL.md) | Architectural decisions or documenting APIs |
 | [shipping-and-launch](skills/shipping-and-launch/SKILL.md) | Preparing to deploy |
 | [idea-refine](skills/idea-refine/SKILL.md) | Refining vague ideas into actionable plans |
-| [context-engineering](skills/context-engineering/SKILL.md) | Agent output quality is degrading or context needs reset |
 | [web-quality-audit](skills/web-quality-audit/SKILL.md) | Full site audit across performance, accessibility, SEO, and best practices |
 | [performance](skills/performance/SKILL.md) | Loading speed, runtime efficiency, resource optimization |
 | [core-web-vitals](skills/core-web-vitals/SKILL.md) | LCP, INP, CLS metric diagnosis and optimization |
 | [accessibility](skills/accessibility/SKILL.md) | WCAG 2.1 compliance, keyboard nav, ARIA, screen readers |
 | [seo](skills/seo/SKILL.md) | Crawlability, on-page SEO, structured data |
 | [best-practices](skills/best-practices/SKILL.md) | Security headers, modern APIs, browser compatibility |
-
-### AI Product Development
-
-| Skill | When to use |
-|-------|-------------|
-| [vllm](skills/vllm/SKILL.md) | High-throughput self-hosted LLM inference serving |
-| [llama-cpp](skills/llama-cpp/SKILL.md) | Running LLMs locally on CPU/Mac/consumer GPU |
 
 ## Boundaries
 
