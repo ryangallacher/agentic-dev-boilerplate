@@ -32,6 +32,17 @@ This is a boilerplate — it contains the full set of skills across all project 
 | [seo](skills/seo/SKILL.md) | Crawlability, on-page SEO, structured data |
 | [best-practices](skills/best-practices/SKILL.md) | Security headers, modern APIs, browser compatibility |
 
+## References
+
+Supporting checklists — load alongside the relevant skill when you need concrete checks or patterns:
+
+| Reference | Load with |
+|-----------|-----------|
+| [accessibility-checklist](references/accessibility-checklist.md) | `accessibility`, `frontend-ui-engineering` |
+| [performance-checklist](references/performance-checklist.md) | `performance`, `web-quality-audit` |
+| [security-checklist](references/security-checklist.md) | `security-and-hardening`, `security-auditor` |
+| [testing-patterns](references/testing-patterns.md) | `test-driven-development`, `test-engineer` |
+
 ## Boundaries
 
 - **Ask first:** Adding dependencies, changing project structure, making architectural decisions
