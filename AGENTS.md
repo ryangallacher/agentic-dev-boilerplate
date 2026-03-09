@@ -37,11 +37,6 @@ This is a boilerplate — it contains the full set of skills across all project 
 
 | Skill | When to use |
 |-------|-------------|
-| [langchain](skills/langchain/SKILL.md) | Building LLM-powered apps, chains, and pipelines |
-| [crewai](skills/crewai/SKILL.md) | Multi-agent systems where agents collaborate on tasks |
-| [instructor](skills/instructor/SKILL.md) | Extracting structured/typed data from LLM responses |
-| [dspy](skills/dspy/SKILL.md) | Declarative LLM pipelines with automatic prompt optimization |
-| [sentence-transformers](skills/sentence-transformers/SKILL.md) | Generating text/image embeddings for search and RAG |
 | [vllm](skills/vllm/SKILL.md) | High-throughput self-hosted LLM inference serving |
 | [llama-cpp](skills/llama-cpp/SKILL.md) | Running LLMs locally on CPU/Mac/consumer GPU |
 
