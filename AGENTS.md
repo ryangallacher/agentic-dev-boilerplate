@@ -4,6 +4,8 @@
 
 Engineering workflows are in [`skills/`](skills/). Load the relevant skill when the task matches. Do not load all of them upfront.
 
+This is a boilerplate — it contains the full set of skills across all project types. Once a spec exists for this project, remove skills from this table that don't apply to what's being built.
+
 | Skill | When to use |
 |-------|-------------|
 | [spec-driven-development](skills/spec-driven-development/SKILL.md) | Starting a new feature with unclear requirements |
@@ -12,6 +14,7 @@ Engineering workflows are in [`skills/`](skills/). Load the relevant skill when 
 | [test-driven-development](skills/test-driven-development/SKILL.md) | Implementing logic or fixing bugs |
 | [debugging-and-error-recovery](skills/debugging-and-error-recovery/SKILL.md) | Tests fail, builds break, unexpected errors |
 | [code-review-and-quality](skills/code-review-and-quality/SKILL.md) | Before merging any change |
+| [rg-ui-standards](skills/rg-ui-standards/SKILL.md) | Any UI work — load this alongside frontend-ui-engineering, it takes precedence on design decisions |
 | [frontend-ui-engineering](skills/frontend-ui-engineering/SKILL.md) | Building or modifying UI components |
 | [api-and-interface-design](skills/api-and-interface-design/SKILL.md) | Designing APIs or module boundaries |
 | [security-and-hardening](skills/security-and-hardening/SKILL.md) | Handling user input, auth, or sensitive data |
