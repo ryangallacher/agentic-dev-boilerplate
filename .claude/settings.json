@@ -23,7 +23,8 @@
       "Bash(curl -sL \"https://raw.githubusercontent.com/anthropics/skills/main/README.md\")",
       "Bash(gh api repos/addyosmani/agent-skills/contents/agents --jq '.[].name')",
       "Bash(gh api repos/addyosmani/agent-skills/contents/references/performance-checklist.md --jq '.content')",
-      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/references/performance-checklist.md\")"
+      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/references/performance-checklist.md\")",
+      "WebFetch(domain:anthropic.skilljar.com)"
     ]
   }
 }
