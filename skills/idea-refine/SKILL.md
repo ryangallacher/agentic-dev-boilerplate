@@ -1,6 +1,6 @@
 ---
 name: idea-refine
-description: Refine ideas through structured divergent and convergent thinking. Use "idea-refine" or "ideate" to trigger.
+description: Use when you have a vague idea, half-formed concept, or unclear direction and need to think it through before writing a spec or starting work. Use when exploring multiple approaches, evaluating trade-offs, or trying to articulate what you actually want to build.
 ---
 
 # Idea Refine

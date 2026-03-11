@@ -24,7 +24,13 @@
       "Bash(gh api repos/addyosmani/agent-skills/contents/agents --jq '.[].name')",
       "Bash(gh api repos/addyosmani/agent-skills/contents/references/performance-checklist.md --jq '.content')",
       "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/references/performance-checklist.md\")",
-      "WebFetch(domain:anthropic.skilljar.com)"
+      "WebFetch(domain:anthropic.skilljar.com)",
+      "Bash(grep -h \"^description:\" c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/*/SKILL.md)",
+      "Read(//c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/**)",
+      "Read(//c/Users/Ryan/.claude/projects/c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate/memory/**)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate"
     ]
   }
 }

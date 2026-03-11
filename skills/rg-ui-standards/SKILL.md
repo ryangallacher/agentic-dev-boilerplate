@@ -1,6 +1,6 @@
 ---
 name: rg-ui-standards
-description: Personal UI standards and design conventions. Load when building or modifying any UI — spacing, layout, typography, or visual decisions.
+description: Use when building or modifying any UI. Defines personal design standards for spacing, layout, typography, and visual decisions — these take precedence over defaults suggested by other skills. Always load alongside frontend-ui-engineering for any UI work.
 ---
 
 # UI Standards
