@@ -31,6 +31,7 @@ This is a boilerplate — it contains the full set of skills across all project 
 | [accessibility](skills/accessibility/SKILL.md) | WCAG 2.1 compliance, keyboard nav, ARIA, screen readers |
 | [seo](skills/seo/SKILL.md) | Crawlability, on-page SEO, structured data |
 | [best-practices](skills/best-practices/SKILL.md) | Security headers, modern APIs, browser compatibility |
+| [pptx](skills/pptx/SKILL.md) | Creating or editing PowerPoint decks, slides, pitches, or presentations |
 
 ## References
 
