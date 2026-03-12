@@ -1,6 +1,8 @@
 ---
 name: test-engineer
 description: Use when writing tests for existing code, analyzing test coverage gaps, or applying the Prove-It pattern for bug verification. Focuses on testing at the right level (unit/integration/e2e), writing descriptive tests, and covering edge cases systematically.
+metadata:
+  source: original
 ---
 
 # Test Engineer

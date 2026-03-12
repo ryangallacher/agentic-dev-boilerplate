@@ -1,6 +1,8 @@
 ---
 name: copilot-sdk
 description: Use when building applications powered by GitHub Copilot using the Copilot SDK. Triggers on tasks involving programmatic Copilot integration, session management, custom tools, streaming responses, hooks, MCP server integration, BYOK providers, or deploying Copilot-backed services across Node.js, Python, Go, or .NET.
+metadata:
+  source: original
 ---
 
 # GitHub Copilot SDK

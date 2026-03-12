@@ -2,6 +2,8 @@
 name: pptx
 description: Use when creating, editing, or reading a PowerPoint presentation or .pptx file. Use when the user asks for a deck, slides, a pitch, a presentation, or a visual report. Use when a .pptx file is the input or the desired output, regardless of content type.
 compatibility: Requires Node.js (pptxgenjs), LibreOffice (soffice), poppler (pdftoppm), Python 3 with defusedxml and Pillow
+metadata:
+  source: original
 ---
 
 # PPTX Skill

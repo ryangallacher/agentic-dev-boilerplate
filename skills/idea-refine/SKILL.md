@@ -1,6 +1,8 @@
 ---
 name: idea-refine
 description: Use when you have a vague idea, half-formed concept, or unclear direction and need to think it through before writing a spec or starting work. Use when exploring multiple approaches, evaluating trade-offs, or trying to articulate what you actually want to build.
+metadata:
+  source: original
 ---
 
 # Idea Refine

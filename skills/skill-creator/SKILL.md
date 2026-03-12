@@ -1,6 +1,10 @@
 ---
 name: skill-creator
 description: Use when creating a new skill or updating an existing skill in this boilerplate. Covers skill structure, description writing, progressive disclosure, bundled resources, and quality checklist.
+license: MIT
+metadata:
+  author: microsoft
+  source: adapted from https://github.com/microsoft/skills/tree/main/.github/skills/skill-creator
 ---
 
 # Skill Creator

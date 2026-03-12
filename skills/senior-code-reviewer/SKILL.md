@@ -1,6 +1,8 @@
 ---
 name: senior-code-reviewer
 description: Use when you need a staff-engineer-level code review with categorized findings. Reviews correctness, readability, architecture, security, and performance. Outputs a structured verdict with Critical/Important/Suggestion findings.
+metadata:
+  source: original
 ---
 
 # Senior Code Reviewer

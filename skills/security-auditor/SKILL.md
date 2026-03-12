@@ -1,6 +1,8 @@
 ---
 name: security-auditor
 description: Use when conducting a dedicated security audit. Covers input handling, authentication, data protection, infrastructure, and third-party integrations. Outputs findings classified by severity (Critical/High/Medium/Low/Info) with proof-of-concept and remediation steps.
+metadata:
+  source: original
 ---
 
 # Security Auditor

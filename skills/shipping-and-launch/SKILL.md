@@ -1,6 +1,8 @@
 ---
 name: shipping-and-launch
 description: Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy.
+metadata:
+  source: original
 ---
 
 # Shipping and Launch

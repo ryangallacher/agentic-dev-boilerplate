@@ -32,6 +32,18 @@ This is a boilerplate — it contains the full set of skills across all project 
 | [seo](skills/seo/SKILL.md) | Crawlability, on-page SEO, structured data |
 | [best-practices](skills/best-practices/SKILL.md) | Security headers, modern APIs, browser compatibility |
 | [pptx](skills/pptx/SKILL.md) | Creating or editing PowerPoint decks, slides, pitches, or presentations |
+| [security-auditor](skills/security-auditor/SKILL.md) | Deep security audit — threat modelling, vulnerability review, pen-test style analysis |
+| [senior-code-reviewer](skills/senior-code-reviewer/SKILL.md) | Staff-engineer-level review covering architecture, maintainability, and long-term impact |
+| [test-engineer](skills/test-engineer/SKILL.md) | Designing or overhauling a test strategy — coverage gaps, test architecture, CI integration |
+| [react-best-practices](skills/react-best-practices/SKILL.md) | Writing, reviewing, or refactoring React or Next.js code for performance |
+| [composition-patterns](skills/composition-patterns/SKILL.md) | Refactoring components with boolean prop proliferation or designing reusable component APIs |
+| [react-native-guidelines](skills/react-native-guidelines/SKILL.md) | Building React Native or Expo mobile apps |
+| [copilot-sdk](skills/copilot-sdk/SKILL.md) | Building applications powered by GitHub Copilot programmatically |
+| [skill-creator](skills/skill-creator/SKILL.md) | Creating or updating a skill in this boilerplate |
+| [database-and-migrations](skills/database-and-migrations/SKILL.md) | Schema design, migrations, ORM patterns (Prisma/Drizzle), and query optimization |
+| [typescript-patterns](skills/typescript-patterns/SKILL.md) | Type design, generics, discriminated unions, and avoiding common TS pitfalls |
+| [observability-and-monitoring](skills/observability-and-monitoring/SKILL.md) | Structured logging, Sentry error tracking, metrics, and alerting |
+| [environment-and-config](skills/environment-and-config/SKILL.md) | .env discipline, secrets handling, runtime config validation, and feature flags |
 
 ## References
 
@@ -43,6 +55,7 @@ Supporting checklists — load alongside the relevant skill when you need concre
 | [performance-checklist](references/performance-checklist.md) | `performance`, `web-quality-audit` |
 | [security-checklist](references/security-checklist.md) | `security-and-hardening`, `security-auditor` |
 | [testing-patterns](references/testing-patterns.md) | `test-driven-development`, `test-engineer` |
+| [mental-health-ux-patterns](references/mental-health-ux-patterns.md) | `accessibility`, `frontend-ui-engineering` — when building for vulnerable users |
 
 ## Boundaries
 

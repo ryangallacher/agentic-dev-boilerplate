@@ -7,7 +7,7 @@ Built on personal time with personal resources. Free for anyone to use, copy, mo
 ## What's included
 
 - `AGENTS.md` / `CLAUDE.md` — project context loaded automatically by AI coding agents
-- `skills/` — 20+ workflow skills the agent loads on demand
+- `skills/` — 32 workflow skills the agent loads on demand
 - `.claude/commands/` — slash commands for common workflows
 
 ## Usage
