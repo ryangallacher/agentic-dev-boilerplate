@@ -520,3 +520,4 @@ axe https://example.com
 - [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
 - [Deque axe Rules](https://dequeuniversity.com/rules/axe/)
 - [Web Quality Audit](../web-quality-audit/SKILL.md)
+- [Mental Health UX Patterns](../../references/mental-health-ux-patterns.md) — apply when building for vulnerable users or mental health contexts

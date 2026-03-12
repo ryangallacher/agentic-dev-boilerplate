@@ -38,7 +38,8 @@
       "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/scripts/office/validators/pptx.py\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/scripts/office/validators/base.py\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/scripts/office/validators/docx.py\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/scripts/office/validators/redlining.py\")"
+      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/scripts/office/validators/redlining.py\")",
+      "WebFetch(domain:designpatternsformentalhealth.org)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate"
