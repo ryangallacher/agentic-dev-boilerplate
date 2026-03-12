@@ -46,7 +46,9 @@
       "Bash(curl -s https://api.github.com/repos/microsoft/skills/contents/.github/skills/skill-creator)",
       "Bash(curl -s https://api.github.com/repos/microsoft/skills/contents/.github/skills/copilot-sdk)",
       "Bash(curl -s https://raw.githubusercontent.com/microsoft/skills/main/.github/skills/skill-creator/SKILL.md)",
-      "Bash(curl -s https://raw.githubusercontent.com/microsoft/skills/main/.github/skills/copilot-sdk/SKILL.md)"
+      "Bash(curl -s https://raw.githubusercontent.com/microsoft/skills/main/.github/skills/copilot-sdk/SKILL.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/microsoft/skills/main/hooks/continual-learning/SKILL.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/microsoft/skills/main/hooks/continual-learning/learn.sh)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate"
