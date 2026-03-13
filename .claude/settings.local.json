@@ -40,6 +40,9 @@
       "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/git-workflow-and-versioning/SKILL.md\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/ci-cd-and-automation/SKILL.md\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/documentation-and-adrs/SKILL.md\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate"
     ]
   }
 }

@@ -21,6 +21,7 @@ Four hooks run automatically on every Claude session. They require **Python 3** 
 | `session-story.py` | After each response | Appends problem, decisions, and file changes to `project-story/YYYY-MM-DD.md` — builds a narrative journal for case studies and post-mortems |
 | `protect-sensitive.py` | Before any file write | Blocks writes to `.env*`, `*.pem`, `*.key`, and migration files |
 | `bash-guard.py` | Before any shell command | Blocks `rm -rf`, `git push --force`, `DROP TABLE`, and other destructive commands |
+| `pre-commit-check.py` | Before `git commit` | Runs your test suite and blocks the commit if tests fail — set `TEST_COMMAND` in the script |
 | `reinject-conventions.py` | After context compaction | Re-injects `AGENTS.md` so the agent doesn't drift from project conventions mid-session |
 
 The session journal is gitignored by default. Remove the `project-story/` line from `.gitignore` if you want to commit it alongside the code.

@@ -59,14 +59,39 @@ Supporting checklists — load alongside the relevant skill when you need concre
 
 ## Hooks
 
-Four hooks run automatically on every session via `.claude/hooks/`. Do not disable them without good reason.
+Five hooks run automatically on every session via `.claude/hooks/`. Do not disable them without good reason.
 
 | Hook | Event | Purpose |
 |------|-------|---------|
-| `session-story.py` | `Stop` | Journals the session to `project-story/` — problem, decisions, files changed |
+| `session-story.py` | `SessionEnd` | Journals the session to `project-story/` — problem, decisions, files changed |
 | `protect-sensitive.py` | `PreToolUse` (Write/Edit) | Blocks writes to `.env*`, keys, certs, migration files |
 | `bash-guard.py` | `PreToolUse` (Bash) | Blocks destructive shell commands |
+| `pre-commit-check.py` | `PreToolUse` (Bash) | Runs test suite before `git commit` — set `TEST_COMMAND` in the script when starting a project |
 | `reinject-conventions.py` | `SessionStart` (compact) | Re-injects this file after context compaction |
+
+## Agentic patterns
+
+**When to use plan mode**
+Use plan mode (`/plan` or Shift+Tab to toggle) before any task that touches multiple files, changes an API boundary, or could be hard to reverse. Plan mode lets you review and correct the approach before anything executes. Switch back to normal mode once the plan is agreed.
+
+**When to spawn subagents**
+Subagents are separate agents with their own context window, spawned via the Agent tool. Use them when:
+- Two searches or research tasks can run in parallel and don't depend on each other
+- A task would produce so much output (large file reads, broad searches) it would flood the main context
+- You need a specialised agent — `Explore` for codebase search, `Plan` for architecture design
+
+Do not spawn a subagent for simple sequential tasks. A subagent returns one message — there is no back-and-forth. If the task needs iteration, keep it in the main context.
+
+**Subagent types available**
+- `Explore` — fast codebase search and exploration
+- `Plan` — architecture and implementation planning
+- `general-purpose` — research, multi-step tasks, web search
+
+**Context window discipline**
+Prefer targeted reads (specific file + line range) over broad ones. When a task is complete, summarise what was done before context grows too large — this gives the compaction hook better material to work with and keeps re-injected context clean.
+
+**MCP servers**
+Model Context Protocol servers extend what the agent can connect to — databases, APIs, internal tools — without shell commands. Add project-specific MCP servers to `.claude/settings.json` under `mcpServers` when you need the agent to query live data directly.
 
 ## Boundaries
 

@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "Stop": [
+    "SessionEnd": [
       {
         "hooks": [
           {
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 .claude/hooks/protect-sensitive.py 2>/dev/null || python .claude/hooks/protect-sensitive.py",
+            "command": "python3 .claude/hooks/protect-sensitive.py",
             "timeout": 10
           }
         ]
@@ -27,8 +27,13 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 .claude/hooks/bash-guard.py 2>/dev/null || python .claude/hooks/bash-guard.py",
+            "command": "python3 .claude/hooks/bash-guard.py",
             "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/pre-commit-check.py",
+            "timeout": 120
           }
         ]
       }
@@ -48,66 +53,7 @@
   },
   "permissions": {
     "allow": [
-      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/idea-refine/SKILL.md\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/context-engineering/SKILL.md\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/browser-testing-with-devtools/SKILL.md\")",
-      "Bash(gh api repos/addyosmani/web-quality-skills --jq '.description')",
-      "Bash(gh api repos/addyosmani/web-quality-skills/contents --jq '.[].name')",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/web-quality-audit/SKILL.md\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/web-quality-audit/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/web-quality-audit/SKILL.md\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/performance/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/performance/SKILL.md\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/core-web-vitals/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/core-web-vitals/SKILL.md\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/accessibility/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/accessibility/SKILL.md\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/seo/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/seo/SKILL.md\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/addyosmani/web-quality-skills/main/skills/best-practices/SKILL.md\" -o \"c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/best-practices/SKILL.md\")",
-      "Bash(curl -sL \"https://api.github.com/repos/Orchestra-Research/AI-Research-SKILLs/contents/skills\")",
-      "Bash(curl -sL \"https://api.github.com/repos/Orchestra-Research/AI-Research-SKILLs/contents\")",
-      "Bash(curl -sL \"https://api.github.com/repos/Orchestra-Research/AI-Research-SKILLs/contents/14-agents\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/Orchestra-Research/AI-Research-SKILLs/main/14-agents/autogpt/SKILL.md\")",
-      "Bash(curl -sL \"https://api.github.com/repos/Orchestra-Research/AI-Research-SKILLs/contents/15-rag\")",
-      "Bash(curl -sL \"https://api.github.com/repos/anthropics/skills/contents\")",
-      "Bash(curl -sL \"https://api.github.com/repos/anthropics/skills/contents/skills\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/anthropics/skills/main/README.md\")",
-      "Bash(gh api repos/addyosmani/agent-skills/contents/agents --jq '.[].name')",
-      "Bash(gh api repos/addyosmani/agent-skills/contents/references/performance-checklist.md --jq '.content')",
-      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/references/performance-checklist.md\")",
-      "WebFetch(domain:anthropic.skilljar.com)",
-      "Bash(grep -h \"^description:\" c:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/*/SKILL.md)",
-      "Read(//c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/**)",
-      "Read(//c/Users/Ryan/.claude/projects/c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate/memory/**)",
-      "Bash(gh api:*)",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pdf/SKILL.md\")",
-      "Bash(curl -sL \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/SKILL.md\")",
-      "Bash(curl -sL \"https://api.github.com/repos/anthropics/skills/contents/skills/pdf\")",
-      "Bash(python3 -c \"import sys,json; [print\\(f\"\"{e[''''type'''']:6} {e[''''name'''']}\"\"\\) for e in json.load\\(sys.stdin\\)]\")",
-      "Bash(curl -sL https://api.github.com/repos/anthropics/skills/contents/skills/pdf)",
-      "Bash(curl -sL https://api.github.com/repos/anthropics/skills/contents/skills/pptx)",
-      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/scripts/office/validators/pptx.py\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/scripts/office/validators/base.py\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/scripts/office/validators/docx.py\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/anthropics/skills/main/skills/pptx/scripts/office/validators/redlining.py\")",
-      "WebFetch(domain:designpatternsformentalhealth.org)",
-      "Bash(curl -s \"https://raw.githubusercontent.com/vercel-labs/agent-skills/main/skills/composition-patterns/SKILL.md\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/microsoft/skills/main/.github/skills/skill-creator/SKILL.md\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/microsoft/skills/main/.github/skills/copilot-sdk/SKILL.md\")",
-      "Bash(curl -s https://api.github.com/repos/microsoft/skills/contents/.github/skills/skill-creator)",
-      "Bash(curl -s https://api.github.com/repos/microsoft/skills/contents/.github/skills/copilot-sdk)",
-      "Bash(curl -s https://raw.githubusercontent.com/microsoft/skills/main/.github/skills/skill-creator/SKILL.md)",
-      "Bash(curl -s https://raw.githubusercontent.com/microsoft/skills/main/.github/skills/copilot-sdk/SKILL.md)",
-      "Bash(curl -s https://raw.githubusercontent.com/microsoft/skills/main/hooks/continual-learning/SKILL.md)",
-      "Bash(curl -s https://raw.githubusercontent.com/microsoft/skills/main/hooks/continual-learning/learn.sh)",
-      "Bash(wc -l /c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/.claude/commands/*.md)",
-      "Bash(for skill:*)",
-      "Bash(do ls:*)",
-      "Bash(ls -d /c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/*/)",
-      "Bash(grep -h \"^name:\" /c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/*/SKILL.md)",
-      "Read(//c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/$skill/**)",
-      "Bash(grep -l \"name: CI\\\\|name: Rollback\\\\|name: skill-name\" /c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/*/SKILL.md)",
-      "Bash(git -C /c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate log --oneline)",
       "WebSearch"
-    ],
-    "additionalDirectories": [
-      "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate"
     ]
   }
 }
