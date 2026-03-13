@@ -2,7 +2,7 @@
 
 ## Skills
 
-Engineering workflows are in [`skills/`](skills/). Load the relevant skill when the task matches. Do not load all of them upfront.
+Engineering workflows are in [`skills/`](skills/). **Before starting any task, identify which skills apply from the table below and read them. Do not begin implementation without loading the relevant skill first.** If no skill clearly matches, say so rather than proceeding without guidance. Do not load all skills upfront — only what the current task requires.
 
 This is a boilerplate — it contains the full set of skills across all project types. Once a spec exists for this project, remove skills from this table that don't apply to what's being built.
 

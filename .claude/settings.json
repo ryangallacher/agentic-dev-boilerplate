@@ -1,4 +1,15 @@
 {
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Read(//c/Users/Ryan/Documents/GitHub/sense-check/**)",
+      "Read(//c/Users/Ryan/Documents/GitHub/sense-check/.claude/**)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate\\.claude\\commands",
+      "C:\\Users\\Ryan\\Documents\\GitHub\\sense-check"
+    ]
+  },
   "hooks": {
     "SessionEnd": [
       {
@@ -49,11 +60,6 @@
           }
         ]
       }
-    ]
-  },
-  "permissions": {
-    "allow": [
-      "WebSearch"
     ]
   }
 }
