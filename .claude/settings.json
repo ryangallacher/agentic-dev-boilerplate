@@ -3,11 +3,20 @@
     "allow": [
       "WebSearch",
       "Read(//c/Users/Ryan/Documents/GitHub/sense-check/**)",
-      "Read(//c/Users/Ryan/Documents/GitHub/sense-check/.claude/**)"
+      "Read(//c/Users/Ryan/Documents/GitHub/sense-check/.claude/**)",
+      "Read(//c/Users/Ryan/Documents/GitHub/rg-design-system/**)",
+      "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/.claude/hooks C:/Users/Ryan/Documents/GitHub/rg-design-system/.claude/hooks)",
+      "Bash(cp C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/.claude/commands/setup.md C:/Users/Ryan/Documents/GitHub/rg-design-system/.claude/commands/setup.md)",
+      "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/react-best-practices C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)",
+      "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/composition-patterns C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)",
+      "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/typescript-patterns C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)",
+      "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/rg-ui-standards C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate\\.claude\\commands",
-      "C:\\Users\\Ryan\\Documents\\GitHub\\sense-check"
+      "C:\\Users\\Ryan\\Documents\\GitHub\\sense-check",
+      "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system\\.claude",
+      "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system"
     ]
   },
   "hooks": {
