@@ -16,7 +16,7 @@ Write a structured specification before writing any code. The spec is the shared
 - Starting a new project or feature
 - Requirements are ambiguous or incomplete
 - The change touches multiple files or modules
-- You're about to make an architectural decision
+- You're about to make an architectural decision (→ [system-design](../system-design/SKILL.md))
 - The task would take more than 30 minutes to implement
 
 **When NOT to use:** Single-line fixes, typo corrections, or changes where requirements are unambiguous and self-contained.
@@ -188,7 +188,7 @@ The spec is a living document, not a one-time artifact:
 - Starting to write code without any written requirements
 - Asking "should I just start building?" before clarifying what "done" means
 - Implementing features not mentioned in any spec or task list
-- Making architectural decisions without documenting them
+- Making architectural decisions without documenting them (→ [system-design](../system-design/SKILL.md), [documentation-and-adrs](../documentation-and-adrs/SKILL.md))
 - Skipping the spec because "it's obvious what to build"
 
 ## Verification

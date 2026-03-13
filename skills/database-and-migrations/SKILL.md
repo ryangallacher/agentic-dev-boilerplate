@@ -12,6 +12,22 @@ metadata:
 
 Design schemas you can evolve safely. Write migrations that are reversible and idempotent. Query data efficiently without N+1 problems. The goal is a data layer that is correct, fast enough, and easy to change as requirements shift.
 
+## Choosing Your Data Model
+
+The data model is one of the most consequential decisions in a system — it defines the limits of what's natural to query, how the schema can evolve, and where complexity ends up. Make this choice deliberately.
+
+| Model | Best fit | Watch out for |
+|---|---|---|
+| **Relational** | Structured data with clear relationships, ACID requirements, complex queries | Schema migrations require planning; impedance mismatch with nested objects |
+| **Document** | Heterogeneous records where every row may differ; data loaded as a unit | Locality penalty: loading a 1MB document to read one field is wasteful; poor fit when relationships become primary |
+| **Graph** | Highly connected data where the connections themselves are the feature (social graphs, recommendation engines, permission trees) | Operational complexity; overkill for simple parent-child relationships |
+
+**Schema-on-write vs. schema-on-read:**
+- *Schema-on-write* (relational) — structure enforced at write time. Like static types: catches problems early, migrations are explicit.
+- *Schema-on-read* (document) — structure interpreted at read time. Like dynamic types: flexible for heterogeneous data, but validation is your responsibility.
+
+**The convergence point**: PostgreSQL supports JSON columns natively. For most applications, a relational schema with selective JSON columns covers both cases — relational strictness where structure is known, document flexibility where it isn't. Reach for a pure document or graph store only when the relational model genuinely fights you.
+
 ## Schema Design Principles
 
 ### Name Things Clearly

@@ -28,12 +28,14 @@ ADRs capture the reasoning behind significant technical decisions. They're the h
 
 ### When to Write an ADR
 
-- Choosing a framework, library, or major dependency
-- Designing a data model or database schema
-- Selecting an authentication strategy
-- Deciding on an API architecture (REST vs. GraphQL vs. tRPC)
-- Choosing between build tools, hosting platforms, or infrastructure
-- Any decision that would be expensive to reverse
+Write an ADR if the decision meets any of these criteria:
+
+- **Structural impact** — affects the fundamental architecture style or how the system is partitioned
+- **Characteristic impact** — significantly changes a system -ility (e.g., security, scalability, reliability)
+- **Cross-team constraint** — imposes a rule or standard on other teams or services
+- **High cost of change** — expensive or disruptive to reverse later
+
+Common examples: choosing a framework, library, or major dependency; designing a data model; selecting an authentication strategy; deciding on an API architecture (REST vs. GraphQL vs. tRPC); choosing between hosting platforms or infrastructure.
 
 ### ADR Template
 
@@ -75,12 +77,19 @@ Use PostgreSQL with Prisma ORM.
 - Cons: PostgreSQL has better JSON support, full-text search, and ecosystem tooling
 - Rejected: PostgreSQL is the better fit for our feature requirements
 
+## Trade-offs
+What we are giving up by making this choice:
+- Schema migrations require more planning than a document store
+- Horizontal write scaling requires sharding (not needed at current scale)
+
 ## Consequences
 - Prisma provides type-safe database access and migration management
 - We can use PostgreSQL's full-text search instead of adding Elasticsearch
 - Team needs PostgreSQL knowledge (standard skill, low risk)
 - Hosting on managed service (Supabase, Neon, or RDS)
 ```
+
+The **Trade-offs section is mandatory**. Documenting what you're giving up serves as a defensive record: if the negatives were accepted on Day 1, they cannot be used to reopen the decision later unless the underlying context has changed. This prevents the "Groundhog Day" anti-pattern — repeatedly re-litigating the same decision because no one recorded why it was made.
 
 ### ADR Lifecycle
 
@@ -255,7 +264,8 @@ Special consideration for AI agent context:
 | "The code is self-documenting" | Code shows what. It doesn't show why, what alternatives were rejected, or what constraints apply. |
 | "We'll write docs when the API stabilizes" | APIs stabilize faster when you document them. The doc is the first test of the design. |
 | "Nobody reads docs" | Agents do. Future engineers do. Your 3-months-later self does. |
-| "ADRs are overhead" | A 10-minute ADR prevents a 2-hour debate about the same decision six months later. |
+| "ADRs are overhead" | A 10-minute ADR prevents a 2-hour debate about the same decision six months later. Without it, teams relitigate settled decisions every time someone new joins. |
+| "We only need to document the decision, not the downsides" | The trade-offs section is the most important part. It records what you accepted so those negatives can't be weaponised to reopen the debate later. |
 | "Comments get outdated" | Comments on *why* are stable. Comments on *what* get outdated — that's why you only write the former. |
 
 ## Red Flags

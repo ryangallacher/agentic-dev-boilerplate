@@ -13,7 +13,10 @@
       "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/rg-ui-standards C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)",
       "Read(//c/Users/Ryan/Documents/GitHub/**)",
       "Bash(bash sync.sh)",
-      "Bash(command -v cygpath)"
+      "Bash(command -v cygpath)",
+      "Bash(for skill:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/$skill/**)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate\\.claude\\commands",

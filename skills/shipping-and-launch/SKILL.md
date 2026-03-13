@@ -72,7 +72,7 @@ Ship with confidence. The goal is not just to deploy — it's to deploy safely, 
 
 - [ ] README updated with any new setup requirements
 - [ ] API documentation current
-- [ ] ADRs written for any architectural decisions
+- [ ] ADRs written for any architectural decisions (→ [system-design](../system-design/SKILL.md), [documentation-and-adrs](../documentation-and-adrs/SKILL.md))
 - [ ] Changelog updated
 - [ ] User-facing documentation updated (if applicable)
 

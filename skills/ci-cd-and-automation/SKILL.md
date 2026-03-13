@@ -51,6 +51,54 @@ Pull Request Opened
 
 **No gate can be skipped.** If lint fails, fix lint — don't disable the rule. If a test fails, fix the code — don't skip the test.
 
+## Architectural Fitness Functions
+
+Beyond code quality gates, CI should also enforce structural health — automated checks that verify the architecture's key characteristics aren't degrading over time. These are called fitness functions.
+
+They answer questions like: "Is the bundle still within budget?", "Is test coverage holding?", "Is this module becoming too complex to safely change?"
+
+### Examples by concern
+
+| Concern | Tool / check | Fail condition |
+|---|---|---|
+| Bundle size | `bundlesize`, `size-limit` | Exceeds defined budget (already in pipeline above) |
+| Test coverage | `jest --coverage`, `vitest --coverage` | Drops below threshold (e.g. 80%) |
+| Cyclomatic complexity | `eslint` with `complexity` rule | Any function exceeds complexity of 10 |
+| Circular dependencies | `madge --circular` | Any circular import detected |
+| Dependency drift | `npm audit`, Dependabot | High/critical vulnerability unresolved |
+
+### Coverage threshold example
+
+```yaml
+# jest.config.js
+coverageThreshold: {
+  global: {
+    branches: 70,
+    functions: 80,
+    lines: 80,
+    statements: 80,
+  },
+}
+```
+
+### Circular dependency check
+
+```yaml
+- name: Check for circular dependencies
+  run: npx madge --circular --extensions ts,tsx src/
+```
+
+### Complexity enforcement
+
+```js
+// .eslintrc — flag functions that are too complex to safely change
+rules: {
+  complexity: ['error', { max: 10 }],
+}
+```
+
+Fitness functions don't replace architectural reviews — they make structural decay visible before it becomes a crisis.
+
 ## GitHub Actions Configuration
 
 ### Basic CI Pipeline
