@@ -28,16 +28,20 @@ Remove the corresponding references too if their paired skills are removed.
 
 Also update the boilerplate notice at the top of AGENTS.md — replace "This is a boilerplate — it contains the full set of skills across all project types. Once a spec exists for this project, remove skills from this table that don't apply to what's being built." with a one-line description of what this project actually is.
 
-## 3. Set the test command
+## 3. Register in the boilerplate
 
-Open `.claude/hooks/pre-commit-check.py` and set `TEST_COMMAND` to the appropriate command for this project:
+Add this project's repo name (folder name only, not the full path) as a new line in `../agentic-dev-boilerplate/sync-targets.txt`. This registers it to receive future core updates when `sync.sh` is run from the boilerplate.
+
+## 4. Set the test command
+
+Create `.claude/test-command` with the test command for this project on a single line:
 - Node.js: `npm test` or `npx jest` or `npx vitest run`
 - Python: `pytest`
 - Go: `go test ./...`
 - Rust: `cargo test`
-- If unknown or no tests yet: leave as `None`
+- If unknown or no tests yet: leave the file empty or skip this step
 
-## 4. Confirm
+## 5. Confirm
 
 Tell the user:
 - Which skills were kept and why

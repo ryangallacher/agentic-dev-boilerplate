@@ -10,7 +10,10 @@
       "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/react-best-practices C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)",
       "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/composition-patterns C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)",
       "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/typescript-patterns C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)",
-      "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/rg-ui-standards C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)"
+      "Bash(cp -r C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/rg-ui-standards C:/Users/Ryan/Documents/GitHub/rg-design-system/skills/)",
+      "Read(//c/Users/Ryan/Documents/GitHub/**)",
+      "Bash(bash sync.sh)",
+      "Bash(command -v cygpath)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate\\.claude\\commands",

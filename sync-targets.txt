@@ -1,0 +1,5 @@
+# Projects created from this boilerplate template.
+# Add a new line here as part of /setup when starting a new project.
+# Paths are relative to the parent directory of this repo.
+sense-check
+rg-design-system

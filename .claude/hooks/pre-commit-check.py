@@ -4,21 +4,19 @@ PreToolUse hook (Bash matcher)
 Runs your test suite before any git commit. Blocks the commit if tests fail,
 giving Claude the output so it can fix the issue before retrying.
 
-SETUP: Set the TEST_COMMAND variable below to your project's test command.
+SETUP: Create .claude/test-command with your test command on a single line.
 Examples:
-  TEST_COMMAND = "npm test"
-  TEST_COMMAND = "pytest"
-  TEST_COMMAND = "cargo test"
-  TEST_COMMAND = "go test ./..."
-  TEST_COMMAND = None  # disables this hook
+  npm test
+  pytest
+  cargo test
+  go test ./...
+Leave the file empty or omit it to disable this hook.
 """
 import json
 import os
 import re
 import subprocess
 import sys
-
-TEST_COMMAND = None  # <-- set this when you start a project
 
 data = json.load(sys.stdin)
 command = data.get("tool_input", {}).get("command", "")
@@ -27,10 +25,18 @@ command = data.get("tool_input", {}).get("command", "")
 if not re.match(r"git\s+commit\b", command.strip()):
     sys.exit(0)
 
+cwd = data.get("cwd", ".")
+config_path = os.path.join(cwd, ".claude", "test-command")
+
+try:
+    with open(config_path) as f:
+        TEST_COMMAND = f.read().strip()
+except FileNotFoundError:
+    sys.exit(0)
+
 if not TEST_COMMAND:
     sys.exit(0)
 
-cwd = data.get("cwd", ".")
 result = subprocess.run(
     TEST_COMMAND,
     shell=True,
