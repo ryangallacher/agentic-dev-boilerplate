@@ -57,6 +57,17 @@ Supporting checklists — load alongside the relevant skill when you need concre
 | [testing-patterns](references/testing-patterns.md) | `test-driven-development`, `test-engineer` |
 | [mental-health-ux-patterns](references/mental-health-ux-patterns.md) | `accessibility`, `frontend-ui-engineering` — when building for vulnerable users |
 
+## Hooks
+
+Four hooks run automatically on every session via `.claude/hooks/`. Do not disable them without good reason.
+
+| Hook | Event | Purpose |
+|------|-------|---------|
+| `session-story.py` | `Stop` | Journals the session to `project-story/` — problem, decisions, files changed |
+| `protect-sensitive.py` | `PreToolUse` (Write/Edit) | Blocks writes to `.env*`, keys, certs, migration files |
+| `bash-guard.py` | `PreToolUse` (Bash) | Blocks destructive shell commands |
+| `reinject-conventions.py` | `SessionStart` (compact) | Re-injects this file after context compaction |
+
 ## Boundaries
 
 - **Ask first:** Adding dependencies, changing project structure, making architectural decisions
