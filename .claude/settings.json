@@ -16,7 +16,8 @@
       "Bash(command -v cygpath)",
       "Bash(for skill:*)",
       "Bash(do echo:*)",
-      "Read(//c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/$skill/**)"
+      "Read(//c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/$skill/**)",
+      "Bash(bash sync.sh --apply)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate\\.claude\\commands",

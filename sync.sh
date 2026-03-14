@@ -172,6 +172,8 @@ for target in "${TARGETS[@]}"; do
     "$BOILERPLATE_DIR/.claude/settings.json" \
     "$target/.claude/settings.json"
 
+  sync_file "$BOILERPLATE_DIR/.mcp.json" "$target/.mcp.json" ".mcp.json"
+
   if ! $CHANGED; then
     echo "  (up to date)"
   fi
