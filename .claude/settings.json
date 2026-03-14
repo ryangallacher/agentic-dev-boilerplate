@@ -17,13 +17,25 @@
       "Bash(for skill:*)",
       "Bash(do echo:*)",
       "Read(//c/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate/skills/$skill/**)",
-      "Bash(bash sync.sh --apply)"
+      "Bash(bash sync.sh --apply)",
+      "Bash(gh auth:*)",
+      "Read(//c/Users/Ryan/.claude/**)",
+      "Read(//c/Users/Ryan/AppData/Roaming/Claude/**)",
+      "Read(//c/Users/Ryan/**)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\(''''mcpServers'''', {}\\), indent=2\\)\\)\")",
+      "Bash(ls C:/Users/Ryan/.claude/mcp*)",
+      "Bash(claude mcp:*)",
+      "Bash(git -C C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate show 1c675d5 --stat)",
+      "Bash(echo $SHELL)",
+      "Bash(cmd.exe /c echo %COMSPEC%)",
+      "Bash(gh repo:*)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate\\.claude\\commands",
       "C:\\Users\\Ryan\\Documents\\GitHub\\sense-check",
       "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system\\.claude",
-      "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system"
+      "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system",
+      "C:\\Users\\Ryan\\.claude"
     ]
   },
   "hooks": {
