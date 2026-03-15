@@ -78,7 +78,7 @@
         ]
       }
     ],
-    "SessionStart": [
+    "PostToolUse": [
       {
         "matcher": "compact",
         "hooks": [
