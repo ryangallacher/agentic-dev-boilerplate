@@ -36,6 +36,14 @@ PIVOT_SIGNALS = re.compile(
     re.IGNORECASE,
 )
 
+# Patterns that indicate a measured result (before/after numbers, scores, percentages)
+METRIC_SIGNALS = re.compile(
+    r"(\d+\s*(?:ms|s|kb|mb|gb|%|x|fps|req/s|rps)|\b(?:lcp|fid|cls|inp|ttfb|p\d{2,3})\b"
+    r"|\bscore[d]?\b|\b(?:from|down|up)\s+\d|\bimproved?\b|\breduced?\b|\bfaster\b|\bslower\b"
+    r"|\bbefore[:\s]|\bafter[:\s]|\bbaseline\b|\bbenchmark\b)",
+    re.IGNORECASE,
+)
+
 
 def load_transcript(path):
     messages = []
@@ -80,10 +88,17 @@ def extract_pivot_sentences(text):
     return [s.strip() for s in sentences if len(s) > 30 and PIVOT_SIGNALS.search(s)]
 
 
+def extract_metric_sentences(text):
+    """Pull sentences that contain measurable results (numbers with units, before/after)."""
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    return [s.strip() for s in sentences if len(s) > 20 and METRIC_SIGNALS.search(s)]
+
+
 def parse_transcript(messages):
     user_prompts = []
     decisions = []
     pivots = []
+    metrics = []
     files_changed = set()
     commands_run = []
 
@@ -95,6 +110,7 @@ def parse_transcript(messages):
             for text in extract_text_blocks(content):
                 if len(text) > 10 and not text.startswith("[Context was compacted"):
                     user_prompts.append(text)
+                    metrics.extend(extract_metric_sentences(text))
 
         elif role == "assistant":
             if isinstance(content, list):
@@ -107,6 +123,7 @@ def parse_transcript(messages):
                         if text:
                             decisions.extend(extract_decision_sentences(text))
                             pivots.extend(extract_pivot_sentences(text))
+                            metrics.extend(extract_metric_sentences(text))
 
                     elif block.get("type") == "tool_use":
                         tool = block.get("name", "")
@@ -121,24 +138,24 @@ def parse_transcript(messages):
                             ):
                                 commands_run.append(cmd[:120])
 
-    # Deduplicate decisions/pivots while preserving order
-    seen = set()
-    unique_decisions = []
-    for d in decisions:
-        key = d[:60]
-        if key not in seen:
-            seen.add(key)
-            unique_decisions.append(d)
+    def dedup(items):
+        seen = set()
+        result = []
+        for item in items:
+            key = item[:60]
+            if key not in seen:
+                seen.add(key)
+                result.append(item)
+        return result
 
-    seen = set()
-    unique_pivots = []
-    for p in pivots:
-        key = p[:60]
-        if key not in seen:
-            seen.add(key)
-            unique_pivots.append(p)
-
-    return user_prompts, unique_decisions, unique_pivots, sorted(files_changed), commands_run
+    return (
+        user_prompts,
+        dedup(decisions),
+        dedup(pivots),
+        dedup(metrics),
+        sorted(files_changed),
+        commands_run,
+    )
 
 
 def truncate(text, length=220):
@@ -146,7 +163,7 @@ def truncate(text, length=220):
     return text[:length] + "…" if len(text) > length else text
 
 
-def build_entry(session_id, user_prompts, decisions, pivots, files_changed, commands_run):
+def build_entry(session_id, user_prompts, decisions, pivots, metrics, files_changed, commands_run):
     now = datetime.now()
     lines = [
         f"## {now.strftime('%H:%M')} — session `{session_id[:8]}`",
@@ -163,6 +180,12 @@ def build_entry(session_id, user_prompts, decisions, pivots, files_changed, comm
         lines.append("**Key decisions & reasoning:**")
         for d in decisions[:6]:
             lines.append(f"- {truncate(d)}")
+        lines.append("")
+
+    if metrics:
+        lines.append("**Measured results:**")
+        for m in metrics[:6]:
+            lines.append(f"- {truncate(m)}")
         lines.append("")
 
     if pivots:
@@ -195,7 +218,7 @@ def main():
     session_id = data.get("session_id", "unknown")
 
     messages = load_transcript(transcript_path)
-    user_prompts, decisions, pivots, files_changed, commands_run = parse_transcript(messages)
+    user_prompts, decisions, pivots, metrics, files_changed, commands_run = parse_transcript(messages)
 
     # Only log sessions where something was actually built
     if not files_changed:
@@ -211,7 +234,7 @@ def main():
         with open(journal_path, "w", encoding="utf-8") as f:
             f.write(f"# {today}\n\n")
 
-    entry = build_entry(session_id, user_prompts, decisions, pivots, files_changed, commands_run)
+    entry = build_entry(session_id, user_prompts, decisions, pivots, metrics, files_changed, commands_run)
 
     with open(journal_path, "a", encoding="utf-8") as f:
         f.write(entry)

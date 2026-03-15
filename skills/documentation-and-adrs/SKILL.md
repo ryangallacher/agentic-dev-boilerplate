@@ -87,6 +87,11 @@ What we are giving up by making this choice:
 - We can use PostgreSQL's full-text search instead of adding Elasticsearch
 - Team needs PostgreSQL knowledge (standard skill, low risk)
 - Hosting on managed service (Supabase, Neon, or RDS)
+
+## Results
+<!-- Fill in after the decision has been live in production -->
+- LCP improved from 4.2s → 1.8s after switching image delivery to CDN (measured: Lighthouse, 2025-02-10)
+- Query p95 latency dropped from 320ms → 45ms after adding composite index (measured: Datadog, 2025-02-14)
 ```
 
 The **Trade-offs section is mandatory**. Documenting what you're giving up serves as a defensive record: if the negatives were accepted on Day 1, they cannot be used to reopen the decision later unless the underlying context has changed. This prevents the "Groundhog Day" anti-pattern — repeatedly re-litigating the same decision because no one recorded why it was made.
@@ -99,6 +104,35 @@ PROPOSED → ACCEPTED → (SUPERSEDED or DEPRECATED)
 
 - **Never delete old ADRs.** They capture historical context.
 - When a decision changes, write a new ADR that references and supersedes the old one.
+- **Fill in the Results section after deployment.** If measurable outcomes exist (performance numbers, error rates, user metrics), record them in the ADR so the decision has evidence of its real-world impact.
+
+### Results Log (`docs/results/`)
+
+For improvements that don't have a formal ADR — a quick optimisation, a library swap, a config tweak — record the outcome in `docs/results/YYYY-MM-DD.md`:
+
+```markdown
+# Results — 2025-02-10
+
+## Image CDN migration
+- **Change:** Moved all product images to Cloudflare CDN (PR #88)
+- **Before:** LCP 4.2s (Lighthouse desktop, cold cache)
+- **After:** LCP 1.8s (same conditions)
+- **Source:** Lighthouse CI report, 2025-02-10
+
+## Composite index on orders table
+- **Change:** Added `(user_id, created_at DESC)` index (migration 0042)
+- **Before:** p95 query latency 320ms
+- **After:** p95 query latency 45ms
+- **Source:** Datadog APM dashboard, 2025-02-14
+```
+
+**When to write a result entry:**
+- You ran a performance audit before and after a change
+- A monitoring alert stopped firing after a fix
+- An A/B test concluded with measurable numbers
+- You have a before/after on any -ility (speed, reliability, bundle size, error rate)
+
+Results entries are short — a change description, before/after numbers, and the measurement source. Without the source, the numbers can't be verified or reproduced.
 
 ## Inline Documentation
 
@@ -283,8 +317,10 @@ Special consideration for AI agent context:
 After documenting:
 
 - [ ] ADRs exist for all significant architectural decisions
+- [ ] ADR Results sections filled in where post-deployment measurements exist
 - [ ] README covers quick start, commands, and architecture overview
 - [ ] API functions have parameter and return type documentation
 - [ ] Known gotchas are documented inline where they matter
 - [ ] No commented-out code remains
 - [ ] Rules files (CLAUDE.md etc.) are current and accurate
+- [ ] `docs/results/` has entries for any measurable before/after improvements

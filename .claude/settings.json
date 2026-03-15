@@ -28,7 +28,8 @@
       "Bash(git -C C:/Users/Ryan/Documents/GitHub/agentic-dev-boilerplate show 1c675d5 --stat)",
       "Bash(echo $SHELL)",
       "Bash(cmd.exe /c echo %COMSPEC%)",
-      "Bash(gh repo:*)"
+      "Bash(gh repo:*)",
+      "Bash(./sync.sh --apply)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate\\.claude\\commands",
