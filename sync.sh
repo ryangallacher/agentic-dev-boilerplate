@@ -10,6 +10,8 @@
 #   .claude/hooks/        — all hook scripts
 #   .claude/commands/     — all commands except setup.md
 #   settings.json hooks   — only the "hooks" key is merged; permissions are preserved
+#   skills/               — all boilerplate skills (never modify these in a project — create new ones instead)
+#   references/           — shared checklists and references (knowledge/ is NOT synced — it is project-specific)
 #
 # Which projects get synced:
 #   Defined in sync-targets.txt — add a project there when you create it from this template.
@@ -173,6 +175,23 @@ for target in "${TARGETS[@]}"; do
     "$target/.claude/settings.json"
 
   sync_file "$BOILERPLATE_DIR/.mcp.json" "$target/.mcp.json" ".mcp.json"
+
+  # Sync skills/ recursively (never modify boilerplate skills in projects — create new ones instead)
+  if [[ -d "$BOILERPLATE_DIR/skills" ]]; then
+    while IFS= read -r src; do
+      relative="${src#$BOILERPLATE_DIR/}"
+      sync_file "$src" "$target/$relative" "$relative"
+    done < <(find "$BOILERPLATE_DIR/skills" -type f)
+  fi
+
+  # Sync references/ (project-specific references are safe — they have distinct names)
+  if [[ -d "$BOILERPLATE_DIR/references" ]]; then
+    for src in "$BOILERPLATE_DIR/references/"*.md; do
+      [[ -f "$src" ]] || continue
+      filename="$(basename "$src")"
+      sync_file "$src" "$target/references/$filename" "references/$filename"
+    done
+  fi
 
   if ! $CHANGED; then
     echo "  (up to date)"

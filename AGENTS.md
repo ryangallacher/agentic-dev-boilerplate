@@ -106,6 +106,7 @@ When new information, documentation, or research arrives — use this table to d
 | Agent skills and workflows | `skills/` | One skill per directory, `SKILL.md` inside |
 | Hooks and automation | `.claude/hooks/` | Document in AGENTS.md hooks table |
 | Project story / session journal | `project-story/` | Auto-generated — do not edit manually |
+| Reusable AI workflow playbooks | `sense-check/playbooks/` | Always write here regardless of which repo you're working in |
 | Research or external articles | `references/` | Summarise key points and relevance — don't just link |
 | Sensitive config, secrets, env vars | `.env` (never committed) | See `protect-sensitive.py` hook |
 
@@ -123,3 +124,4 @@ When new information, documentation, or research arrives — use this table to d
 
 - **Ask first:** Adding dependencies, changing project structure, making architectural decisions
 - **Never:** Commit secrets, skip tests, make changes outside the agreed spec
+- **Never modify boilerplate skills in a project repo.** Skills in `skills/` are synced from the boilerplate and will be overwritten. If a project needs custom behaviour, create a new skill with a distinct name alongside the boilerplate ones.
