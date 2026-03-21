@@ -93,6 +93,32 @@ Prefer targeted reads (specific file + line range) over broad ones. When a task 
 **MCP servers**
 Model Context Protocol servers extend what the agent can connect to — databases, APIs, internal tools — without shell commands. Add project-specific MCP servers to `.claude/settings.json` under `mcpServers` when you need the agent to query live data directly.
 
+## Information Architecture
+
+When new information, documentation, or research arrives — use this table to decide where it goes. Prefer repo-local, agent-agnostic locations over agent-specific memory.
+
+| Type of content | Where it goes | Notes |
+|----------------|---------------|-------|
+| Architectural or strategic decisions | `references/` | Agent-readable, load alongside relevant skill |
+| Specs for new features | `spec.md` or `specs/` | Written before implementation begins |
+| ADRs | `docs/decisions/` | When a decision needs permanent record with context |
+| Checklists and process references | `references/` | Load alongside skills when needed |
+| Agent skills and workflows | `skills/` | One skill per directory, `SKILL.md` inside |
+| Hooks and automation | `.claude/hooks/` | Document in AGENTS.md hooks table |
+| Project story / session journal | `project-story/` | Auto-generated — do not edit manually |
+| Research or external articles | `references/` | Summarise key points and relevance — don't just link |
+| Sensitive config, secrets, env vars | `.env` (never committed) | See `protect-sensitive.py` hook |
+
+**Rules:**
+- Repo-local always beats agent-specific memory. If it's worth keeping, it belongs in the repo.
+- `references/` is for agent consumption — write declaratively, one topic per file, no narrative prose.
+- Do not create a `docs/` file when `references/` would do.
+- If content doesn't fit any category above, ask before creating a new top-level directory.
+
+## Principles
+
+- **Agent agnostic by default:** Any tooling, config, docs, or conventions should work across agents (Claude, Cursor, Copilot, etc.) unless there's a specific reason to go agent-specific. Prefer `AGENTS.md` over `CLAUDE.md`, repo-local files over agent memory, and open formats over proprietary ones.
+
 ## Boundaries
 
 - **Ask first:** Adding dependencies, changing project structure, making architectural decisions
