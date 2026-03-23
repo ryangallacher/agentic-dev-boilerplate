@@ -44,6 +44,7 @@ This is a boilerplate — it contains the full set of skills across all project 
 | [typescript-patterns](skills/typescript-patterns/SKILL.md) | Type design, generics, discriminated unions, and avoiding common TS pitfalls |
 | [observability-and-monitoring](skills/observability-and-monitoring/SKILL.md) | Structured logging, Sentry error tracking, metrics, and alerting |
 | [environment-and-config](skills/environment-and-config/SKILL.md) | .env discipline, secrets handling, runtime config validation, and feature flags |
+| [system-design](skills/system-design/SKILL.md) | Starting a new service, application, or significant subsystem |
 
 ## References
 
