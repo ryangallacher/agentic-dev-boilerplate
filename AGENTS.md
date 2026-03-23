@@ -8,6 +8,7 @@ This is a boilerplate — it contains the full set of skills across all project 
 
 | Skill | When to use |
 |-------|-------------|
+| [repo-structure](skills/repo-structure/SKILL.md) | Before creating, naming, moving, or deleting any file or directory |
 | [spec-driven-development](skills/spec-driven-development/SKILL.md) | Starting a new feature with unclear requirements |
 | [planning-and-task-breakdown](skills/planning-and-task-breakdown/SKILL.md) | Breaking work into verifiable tasks |
 | [incremental-implementation](skills/incremental-implementation/SKILL.md) | Implementing any multi-file change |
@@ -68,6 +69,7 @@ Five hooks run automatically on every session via `.claude/hooks/`. Do not disab
 
 | Hook | Event | Purpose |
 |------|-------|---------|
+| `structure-check.py` | `PostToolUse` (Write) | Checks written files for depth violations, invalid .md locations, and generic names — prompts agent to correct per `skills/repo-structure/SKILL.md` |
 | `session-story.py` | `SessionEnd` | Journals the session to `project-story/` — problem, decisions, files changed |
 | `protect-sensitive.py` | `PreToolUse` (Write/Edit) | Blocks writes to `.env*`, keys, certs, migration files |
 | `bash-guard.py` | `PreToolUse` (Bash) | Blocks destructive shell commands |
