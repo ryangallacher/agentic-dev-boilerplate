@@ -56,6 +56,9 @@ Supporting checklists — load alongside the relevant skill when you need concre
 | [security-checklist](references/security-checklist.md) | `security-and-hardening`, `security-auditor` |
 | [testing-patterns](references/testing-patterns.md) | `test-driven-development`, `test-engineer` |
 | [mental-health-ux-patterns](references/mental-health-ux-patterns.md) | `accessibility`, `frontend-ui-engineering` — when building for vulnerable users |
+| [tool-design-checklist](references/tool-design-checklist.md) | `api-and-interface-design` — when designing or reviewing tool/function definitions |
+| [mcp-decision-rules](references/mcp-decision-rules.md) | `api-and-interface-design`, `security-and-hardening` — when designing or evaluating MCP integrations |
+| [model-configuration-heuristics](references/model-configuration-heuristics.md) | `environment-and-config`, `skill-creator` — when configuring model calls or writing system prompts |
 
 ## Hooks
 
