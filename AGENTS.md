@@ -91,13 +91,22 @@ Subagents are separate agents with their own context window, spawned via the Age
 
 Do not spawn a subagent for simple sequential tasks. A subagent returns one message — there is no back-and-forth. If the task needs iteration, keep it in the main context.
 
+**Sub-agent summary size:** When a sub-agent reports back to the lead agent, condense its findings to signal only — conclusions, key decisions, and blockers. Discard intermediate reasoning, redundant tool outputs, and full file contents. A simple lookup needs a sentence; a deep architectural investigation might need several paragraphs — calibrate to what the lead agent actually needs to proceed.
+
 **Subagent types available**
 - `Explore` — fast codebase search and exploration
 - `Plan` — architecture and implementation planning
 - `general-purpose` — research, multi-step tasks, web search
 
 **Context window discipline**
+Not all context loads the same way:
+- **Structural/procedural context** (AGENTS.md, CLAUDE.md, skills) — preloaded at session start. Governs all behaviour; must be present before any action.
+- **Domain knowledge** (knowledge/) — retrieve just-in-time, only when the current step needs it. Do not load upfront.
+- **File contents and tool results** — retrieve just-in-time. Hold a reference (path or identifier); read only when required.
+
 Prefer targeted reads (specific file + line range) over broad ones. When a task is complete, summarise what was done before context grows too large — this gives the compaction hook better material to work with and keeps re-injected context clean.
+
+**What to preserve when compacting:** architectural decisions, unresolved bugs, implementation details still in flight, critical dependencies between steps. **What to discard:** redundant tool outputs, intermediate reasoning that led to a decision already recorded, full file contents that can be re-read if needed.
 
 **MCP servers**
 Model Context Protocol servers extend what the agent can connect to — databases, APIs, internal tools — without shell commands. Add project-specific MCP servers to `.claude/settings.json` under `mcpServers` when you need the agent to query live data directly.
