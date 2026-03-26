@@ -15,6 +15,7 @@ This is a boilerplate — it contains the full set of skills across all project 
 | [test-driven-development](skills/test-driven-development/SKILL.md) | Implementing logic or fixing bugs |
 | [debugging-and-error-recovery](skills/debugging-and-error-recovery/SKILL.md) | Tests fail, builds break, unexpected errors |
 | [code-review-and-quality](skills/code-review-and-quality/SKILL.md) | Before merging any change |
+| [component-states](skills/component-states/SKILL.md) | Before designing or implementing any UI component — defines the full state inventory |
 | [rg-ui-standards](skills/rg-ui-standards/SKILL.md) | Any UI work — load this alongside frontend-ui-engineering, it takes precedence on design decisions |
 | [frontend-ui-engineering](skills/frontend-ui-engineering/SKILL.md) | Building or modifying UI components |
 | [api-and-interface-design](skills/api-and-interface-design/SKILL.md) | Designing APIs or module boundaries |
