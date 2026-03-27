@@ -64,6 +64,7 @@ Supporting checklists — load alongside the relevant skill when you need concre
 | [mcp-decision-rules](references/mcp-decision-rules.md) | `api-and-interface-design`, `security-and-hardening` — when designing or evaluating MCP integrations |
 | [figma-mcp-workflow](references/figma-mcp-workflow.md) | `api-and-interface-design`, `system-design`, `frontend-ui-engineering` — Figma MCP tool selection, fallback chain, token extraction, Code Connect, rate limits |
 | [model-configuration-heuristics](references/model-configuration-heuristics.md) | `environment-and-config`, `skill-creator` — when configuring model calls or writing system prompts |
+| [dependency-decisions](references/dependency-decisions.md) | `system-design`, `api-and-interface-design` — when to use third-party packages vs build bespoke; lock-in test |
 
 ## Hooks
 
