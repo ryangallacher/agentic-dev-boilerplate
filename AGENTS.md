@@ -28,20 +28,17 @@ This is a boilerplate — it contains the full set of skills across all project 
 | [shipping-and-launch](skills/shipping-and-launch/SKILL.md) | Preparing to deploy |
 | [idea-refine](skills/idea-refine/SKILL.md) | Refining vague ideas into actionable plans |
 | [web-quality-audit](skills/web-quality-audit/SKILL.md) | Full site audit across performance, accessibility, SEO, and best practices |
-| [performance](skills/performance/SKILL.md) | Loading speed, runtime efficiency, resource optimization |
 | [core-web-vitals](skills/core-web-vitals/SKILL.md) | LCP, INP, CLS metric diagnosis and optimization |
 | [accessibility](skills/accessibility/SKILL.md) | WCAG 2.1 compliance, keyboard nav, ARIA, screen readers |
-| [seo](skills/seo/SKILL.md) | Crawlability, on-page SEO, structured data |
-| [best-practices](skills/best-practices/SKILL.md) | Security headers, modern APIs, browser compatibility |
 | [pptx](skills/pptx/SKILL.md) | Creating or editing PowerPoint decks, slides, pitches, or presentations |
 | [security-auditor](skills/security-auditor/SKILL.md) | Deep security audit — threat modelling, vulnerability review, pen-test style analysis |
 | [senior-code-reviewer](skills/senior-code-reviewer/SKILL.md) | Staff-engineer-level review covering architecture, maintainability, and long-term impact |
 | [test-engineer](skills/test-engineer/SKILL.md) | Designing or overhauling a test strategy — coverage gaps, test architecture, CI integration |
 | [react-best-practices](skills/react-best-practices/SKILL.md) | Writing, reviewing, or refactoring React or Next.js code for performance |
 | [composition-patterns](skills/composition-patterns/SKILL.md) | Refactoring components with boolean prop proliferation or designing reusable component APIs |
-| [react-native-guidelines](skills/react-native-guidelines/SKILL.md) | Building React Native or Expo mobile apps |
 | [copilot-sdk](skills/copilot-sdk/SKILL.md) | Building applications powered by GitHub Copilot programmatically |
 | [skill-creator](skills/skill-creator/SKILL.md) | Creating or updating a skill in this boilerplate |
+| [context-eval](skills/context-eval/SKILL.md) | Evaluating whether a proposed context document (knowledge file, skill, or reference) is worth writing — run before creating any new context document |
 | [database-and-migrations](skills/database-and-migrations/SKILL.md) | Schema design, migrations, ORM patterns (Prisma/Drizzle), and query optimization |
 | [typescript-patterns](skills/typescript-patterns/SKILL.md) | Type design, generics, discriminated unions, and avoiding common TS pitfalls |
 | [observability-and-monitoring](skills/observability-and-monitoring/SKILL.md) | Structured logging, Sentry error tracking, metrics, and alerting |
@@ -55,9 +52,7 @@ Supporting checklists — load alongside the relevant skill when you need concre
 | Reference | Load with |
 |-----------|-----------|
 | [accessibility-checklist](references/accessibility-checklist.md) | `accessibility`, `frontend-ui-engineering` |
-| [performance-checklist](references/performance-checklist.md) | `performance`, `web-quality-audit` |
-| [security-checklist](references/security-checklist.md) | `security-and-hardening`, `security-auditor` |
-| [testing-patterns](references/testing-patterns.md) | `test-driven-development`, `test-engineer` |
+| [security-checklist](references/security-checklist.md) | `security-and-hardening`, `security-auditor` — agent safety design, attack vector mitigations, escalation triggers |
 | [mental-health-ux-patterns](references/mental-health-ux-patterns.md) | `accessibility`, `frontend-ui-engineering` — when building for vulnerable users |
 | [ai-readiness-checklist](references/ai-readiness-checklist.md) | `frontend-ui-engineering`, `rg-ui-standards` — when building or reviewing UI that consumes a design system |
 | [tool-design-checklist](references/tool-design-checklist.md) | `api-and-interface-design` — when designing or reviewing tool/function definitions |
@@ -138,6 +133,7 @@ When new information, documentation, or research arrives — use this table to d
 ## Principles
 
 - **Agent agnostic by default:** Any tooling, config, docs, or conventions should work across agents (Claude, Cursor, Copilot, etc.) unless there's a specific reason to go agent-specific. Prefer `AGENTS.md` over `CLAUDE.md`, repo-local files over agent memory, and open formats over proprietary ones.
+- **Security by default:** When writing code that handles user input, authentication, authorization, APIs, or data storage, apply OWASP Top 10 considerations proactively — don't wait to be asked.
 
 ## Boundaries
 
