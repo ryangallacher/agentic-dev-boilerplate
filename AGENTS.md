@@ -60,6 +60,7 @@ Supporting checklists — load alongside the relevant skill when you need concre
 | [figma-mcp-workflow](references/figma-mcp-workflow.md) | `api-and-interface-design`, `system-design`, `frontend-ui-engineering` — Figma MCP tool selection, fallback chain, token extraction, Code Connect, rate limits |
 | [model-configuration-heuristics](references/model-configuration-heuristics.md) | `environment-and-config`, `skill-creator` — when configuring model calls or writing system prompts |
 | [dependency-decisions](references/dependency-decisions.md) | `system-design`, `api-and-interface-design` — when to use third-party packages vs build bespoke; lock-in test |
+| [language-selection-heuristics](references/language-selection-heuristics.md) | `system-design`, `spec-driven-development` — when choosing a language stack; covers training data tiers, agent blind spots, and constraint-based override conditions |
 
 ## Hooks
 
