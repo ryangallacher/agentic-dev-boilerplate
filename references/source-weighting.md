@@ -18,7 +18,7 @@ Anything deliberately placed in the repo: `skills/`, `references/`, `knowledge/`
 Load on trigger per the AGENTS.md skills and references tables. Consult before forming opinions in that domain. If a skill or reference exists for the task at hand, read it before stating a view.
 
 **knowledge/**
-No automated retrieval layer exists. Load `knowledge/INDEX.md` first — it lists every file with a one-line description. Use it to identify relevant files, then read only those. Do not assume you know every file; the corpus contains cross-domain material that may not be obvious from the query.
+If a `search_knowledge` MCP tool is available, call it before forming any opinion — it surfaces cross-domain material that wouldn't fire from training knowledge alone. If not available, load `knowledge/INDEX.md` first — it lists every file with a one-line description. Use it to identify relevant files, then read only those. Do not assume you know every file; the corpus contains cross-domain material that may not be obvious from the query.
 
 **Training knowledge**
 Always in scope. Fills gaps, extends reasoning, enables cross-domain connections. Never blocked by curated sources — curated sources are a floor, not a ceiling.
