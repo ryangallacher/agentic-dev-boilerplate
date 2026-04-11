@@ -6,55 +6,25 @@ type: reference
 
 # Source Weighting
 
-## What counts as curated sources
+## The principle
 
-Anything deliberately placed in the repo: `skills/`, `references/`, `knowledge/`. These represent trusted, selected content — consult them first before drawing on training knowledge.
-
----
-
-## Layer-by-layer decision rules
-
-**Skills and references**
-Load on trigger per the AGENTS.md skills and references tables. Consult before forming opinions in that domain. If a skill or reference exists for the task at hand, read it before stating a view.
-
-**knowledge/**
-If a `search_knowledge` MCP tool is available, call it before forming any opinion — it surfaces cross-domain material that wouldn't fire from training knowledge alone. If not available, load `knowledge/INDEX.md` first — it lists every file with a one-line description. Use it to identify relevant files, then read only those. Do not assume you know every file; the corpus contains cross-domain material that may not be obvious from the query.
-
-**Training knowledge**
-Always in scope. Fills gaps, extends reasoning, enables cross-domain connections. Never blocked by curated sources — curated sources are a floor, not a ceiling.
+Curated sources exist to surface trusted material that training knowledge might not reach on its own — niche frameworks, cross-domain methods, repo-specific context. Check them first so the right material is in play. Training knowledge is always available alongside — use whichever combination gives the best answer for the task. Be honest: cite real sources when you have them, or give a confidence level when you're drawing on training knowledge.
 
 ---
 
-## Cross-domain borrowing rules
+## What to check in this repo
 
-| Situation | Action |
-|-----------|--------|
-| Domain A has suitable curated material | Use it, cite it, stay in domain A |
-| Domain A material is thin or absent | Cross-domain borrowing is justified — name the source domain explicitly |
-| Cross-domain material exists in `knowledge/` | Surface it — this is the primary value of the knowledge base |
-| Cross-domain material would substitute for available same-domain content | Do not substitute — same-domain curated material takes precedence |
-
-**The test:** cross-domain borrowing is valuable when it fills a gap or adds a dimension that domain A material doesn't cover. It is a liability when it displaces material that is already available and appropriate.
+1. **Skills and references** — load on trigger per the AGENTS.md tables before stating a view in that domain
+2. **knowledge/** — if this repo has a knowledge corpus, search it before forming any opinion (see AGENTS.md for how)
+3. **External named authorities** — if AGENTS.md designates specific external sources (design systems, standards bodies), consult them for decisions in that domain before drawing on training knowledge
+4. **Training knowledge** — always in scope; fills gaps, extends reasoning, enables cross-domain connections; never blocked by the layers above
 
 ---
 
-## Transparency signals
+## Honesty and citations
 
-When drawing on multiple layers, be explicit:
-
-- "The [skill/reference] covers this — [citation]"
-- "Nothing in `knowledge/` covers this directly — drawing on [domain]"
-- "The repo covers this from a [domain A] perspective; I'm also drawing on [domain B] because [reason]"
-- "I'm extending beyond what's in `references/` here — no named pattern exists for this case"
-
----
-
-## Scope
-
-Applies when forming opinions or making recommendations — design decisions, strategic analysis, technical choices, written output. Does not apply to mechanical execution tasks (renaming, formatting, running commands, following a clear spec).
-
----
-
-## When this changes
-
-`knowledge/INDEX.md` is the current retrieval mechanism. When the index becomes unwieldy (~80+ files) or agents start missing relevant content, build the MCP semantic search server (design in the project plan). If a `search_knowledge` MCP tool is available, prefer it over manual index lookup.
+- If you've read a source in this session, cite it specifically — file, section, or named pattern
+- If you're confident where training knowledge comes from (e.g. a named framework or author), say so
+- If you're vague on the source, flag it: "I believe this comes from X but haven't verified"
+- If you have no idea, don't guess — label it as training knowledge and leave it uncited
+- A wrong citation is worse than none
