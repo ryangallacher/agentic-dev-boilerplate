@@ -75,6 +75,7 @@ Five hooks run automatically on every session via `.claude/hooks/`. Do not disab
 | `bash-guard.py` | `PreToolUse` (Bash) | Blocks destructive shell commands |
 | `pre-commit-check.py` | `PreToolUse` (Bash) | Runs test suite before `git commit` — set `TEST_COMMAND` in the script when starting a project |
 | `reinject-conventions.py` | `SessionStart` (compact) | Re-injects this file after context compaction |
+| `spec-front-matter-check.py` | `PostToolUse` (Write) | When `spec.md` is written in a project that uses rg-design-system, checks for the front-matter block and prompts the agent to add it if missing |
 
 ## Agentic patterns
 
