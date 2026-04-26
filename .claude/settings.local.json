@@ -39,10 +39,12 @@
       "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/api-and-interface-design/SKILL.md\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/git-workflow-and-versioning/SKILL.md\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/ci-cd-and-automation/SKILL.md\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/documentation-and-adrs/SKILL.md\")"
+      "Bash(curl -s \"https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/documentation-and-adrs/SKILL.md\")",
+      "Bash(xargs -I {} basename {})"
     ],
     "additionalDirectories": [
-      "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate"
+      "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate",
+      "\\tmp"
     ]
   }
 }

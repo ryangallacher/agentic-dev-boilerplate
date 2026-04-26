@@ -63,6 +63,8 @@ Supporting checklists — load alongside the relevant skill when you need concre
 | [dependency-decisions](references/dependency-decisions.md) | `system-design`, `api-and-interface-design` — when to use third-party packages vs build bespoke; lock-in test |
 | [language-selection-heuristics](references/language-selection-heuristics.md) | `system-design`, `spec-driven-development` — when choosing a language stack; covers training data tiers, agent blind spots, and constraint-based override conditions |
 | [thinking-lenses](references/thinking-lenses.md) | `## Thinking lenses` section — 8 perspectives with full prompts; loaded when task type matches a trigger |
+| [ai-calibration-techniques](references/ai-calibration-techniques.md) | When pressure-testing an AI answer or surfacing genuine uncertainty — pairs with `epistemic-framing` |
+| [epistemic-framing](references/epistemic-framing.md) | When generating answers requiring practitioner insight beyond consensus — pairs with `ai-calibration-techniques` |
 
 ## Hooks
 
