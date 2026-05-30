@@ -129,6 +129,23 @@ Triggers (what/whether phase only — before direction is set):
 
 ---
 
+## Session case studies
+
+At the end of any session where meaningful steering occurred — the user redirected you, you tried a significantly different approach after an initial attempt, or direction changed mid-session — write a case study to `C:\Users\Ryan\Documents\GitHub\sense-check\examples\[slug].md` using the session topic as the slug.
+
+A session warrants a case study if: the user corrected direction 2+ times, OR you tried a substantially different approach after an initial attempt. Routine execution sessions do not warrant a case study.
+
+```
+Problem type: [one line, searchable — describes the class of problem, not the specific instance]
+Session length / steering effort: [e.g. "~30 min, 3 corrections"]
+Prompts that didn't work: [what was tried first and why it missed — be specific]
+What steering was needed: [the pivot or correction that changed things — the non-obvious part]
+Prompt that worked: [exact wording or structure, paste-ready for next time]
+What to watch for: [what would have gone wrong without the steering]
+```
+
+---
+
 ## Information Architecture
 
 When new information, documentation, or research arrives — use this table to decide where it goes. Prefer repo-local, agent-agnostic locations over agent-specific memory.
@@ -142,6 +159,7 @@ When new information, documentation, or research arrives — use this table to d
 | Agent skills and workflows | `skills/` | One skill per directory, `SKILL.md` inside |
 | Hooks and automation | `.claude/hooks/` | Document in AGENTS.md hooks table |
 | Project story / session journal | `project-story/` | Auto-generated — do not edit manually |
+| Session case studies | `C:\Users\Ryan\Documents\GitHub\sense-check\examples\` | Always write here regardless of which repo — indexed into knowledge-search |
 | Reusable AI workflow playbooks | `sense-check/playbooks/` | Always write here regardless of which repo you're working in |
 | Research or external articles | `references/` | Summarise key points and relevance — don't just link |
 | Sensitive config, secrets, env vars | `.env` (never committed) | See `protect-sensitive.py` hook |
